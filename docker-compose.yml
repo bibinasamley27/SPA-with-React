@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  task-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: task-manager-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - JWT_SECRET=production-secret-9876543210
+    restart: always
